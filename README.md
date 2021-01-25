@@ -1,4 +1,33 @@
-CREATE TABLE public.utrosasveposlovnice
+CREATE DATABASE "doni-pek"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Croatian_Croatia.1250'
+    LC_CTYPE = 'Croatian_Croatia.1250'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+
+
+
+
+----
+
+CREATE SEQUENCE public.utrosakvoltino_unos_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.utrosakvoltino_unos_id_seq
+    OWNER TO postgres;
+    
+    
+    
+    ------------------
+    
+    CREATE TABLE public.utrosasveposlovnice
 (
     unos_id integer NOT NULL DEFAULT nextval('utrosakvoltino_unos_id_seq'::regclass),
     bt550proizvodnja double precision NOT NULL,
@@ -30,6 +59,3 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.utrosasveposlovnice
     OWNER to postgres;
-
-
-jdbc:postgresql://localhost:5432/doni-pek
