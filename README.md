@@ -30,3 +30,6 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.utrosasveposlovnice
     OWNER to postgres;
+
+
+jdbc:postgresql://localhost:5432/doni-pek
